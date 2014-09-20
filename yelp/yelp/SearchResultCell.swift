@@ -36,12 +36,15 @@ class SearchResultCell: UITableViewCell {
     
     func populate(searchResult: SearchResult) {
     
+        println(searchResult.imageUrl)
         businessImage.setImageWithURL(NSURL(string: searchResult.imageUrl))
+        businessImage.clipsToBounds = true
         nameLabel.text = searchResult.name
+        distanceLabel.text = "\(randomDistance()) mi"
         starsImage.setImageWithURL(NSURL(string: searchResult.stars))
         priceRangeLabel.text = randomPriceRange()
         numOfReviewsLabel.text = "\(searchResult.numOfReviews) Reviews"
-        addressLabel.text = searchResult.address
+        addressLabel.text = "\(searchResult.address), \(searchResult.neighborhood)"
         categoriesLabel.text = searchResult.categoryStr
     }
     
@@ -50,5 +53,12 @@ class SearchResultCell: UITableViewCell {
         var priceRanges = ["$", "$$", "$$$", "$$$$"]
         var randomNumber : Int = Int(rand()) % (priceRanges.count - 1)
         return priceRanges[randomNumber]
+    }
+    
+    func randomDistance() -> String {
+        
+        var distances = ["0.07", "0.4", "0.6", "1.2", "4.4"]
+        var randomNumber : Int = Int(rand()) % (distances.count - 1)
+        return distances[randomNumber]
     }
 }

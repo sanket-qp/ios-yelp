@@ -20,10 +20,10 @@ class SearchResult {
     var categories: [String]! = []
     var imageUrl: String!
     var categoryStr: String!
+    var neighborhood: String!
     
     init(dict: NSDictionary) {
     
-        //println(dict)
         self.name = dict["name"] as String
         self.imageUrl = dict["image_url"] as String
         self.stars = dict["rating_img_url"] as String
@@ -36,6 +36,8 @@ class SearchResult {
         self.zipcode = location["postal_code"] as String
         self.categories = ["thai", "vegetarian", "salad"]
         self.categoryStr = combine(categories, separator: ", ")
+        var neighborhoods = location["neighborhoods"] as [String]
+        self.neighborhood = neighborhoods[0]
     }
     
     func combine(list: [String], separator: String) -> String{
