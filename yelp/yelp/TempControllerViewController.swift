@@ -62,9 +62,10 @@ class TempControllerViewController: UIViewController, UITableViewDelegate, UITab
         if (isSearch) {
             
             println("search display")
+            self.searchDisplayController?.active = false
             
         }
-        
+
         tableView.reloadData()
     }
 
@@ -119,8 +120,14 @@ class TempControllerViewController: UIViewController, UITableViewDelegate, UITab
         if (isSearch) {
         
             var selected = self.filteredCategories[indexPath.row]
+            self.searchDisplayController?.active = false
             self.searchDisplayController?.searchBar.text = selected
-            self.searchDisplayController?.searchResultsTableView.hidden = true
+            //self.searchDisplayController?.searchResultsTableView.hidden = true
+             yelpClient.search(selected)
+            
+        } else {
+        
+        
         }
     }
     
@@ -142,7 +149,7 @@ class TempControllerViewController: UIViewController, UITableViewDelegate, UITab
         println("hello : searching for \(searchText)")
         self.filteredCategories = YelpClient.supportedCategories().filter({
             (category: String) -> Bool in
-            let stringMatch = category.rangeOfString(searchText, options: nil, range: nil, locale: nil)
+            let stringMatch = category.rangeOfString(searchText, options: NSStringCompareOptions.CaseInsensitiveSearch, range: nil, locale: nil)
             return stringMatch != nil
         })
         

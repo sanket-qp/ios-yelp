@@ -25,20 +25,19 @@ class SearchResult {
     init(dict: NSDictionary) {
     
         self.name = dict["name"] as String
-        self.imageUrl = dict["image_url"] as String
+        self.imageUrl = (dict["image_url"] ?? "") as String
         self.stars = dict["rating_img_url"] as String
         self.numOfReviews = dict["review_count"] as Int
         var location = dict["location"] as NSDictionary
-        var address = location["address"] as [String]
-        self.address = address[0]
+        var address = (location["address"] ?? [""]) as [String]
+        self.address = (address.count > 0 ) ? address[0] : ""
         self.city = location["city"] as String
         self.state = location["state_code"] as String
-        self.zipcode = location["postal_code"] as String
+        self.zipcode = (location["postal_code"] ?? "") as String
         self.categories = ["thai", "vegetarian", "salad"]
         self.categoryStr = combine(categories, separator: ", ")
-        //var neighborhoods = location["neighborhoods"] as [String]
-        //self.neighborhood = neighborhoods[0]
-        println(dict["rating_img_url_small"])
+        var neighborhoods = location["neighborhoods"] != nil ? location["neighborhoods"] as [String] : []
+        self.neighborhood = neighborhoods.count > 0 ? neighborhoods[0] : ""
     }
     
     func combine(list: [String], separator: String) -> String{
