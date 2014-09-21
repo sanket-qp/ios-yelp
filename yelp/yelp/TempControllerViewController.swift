@@ -26,7 +26,6 @@ class TempControllerViewController: UIViewController, UITableViewDelegate, UITab
     var isSearch = false
     var filteredCategories: [String] = []
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -63,9 +62,9 @@ class TempControllerViewController: UIViewController, UITableViewDelegate, UITab
             
             println("search display")
             self.searchDisplayController?.active = false
-            
+            isSearch = false
         }
-
+        
         tableView.reloadData()
     }
 
@@ -122,12 +121,13 @@ class TempControllerViewController: UIViewController, UITableViewDelegate, UITab
             var selected = self.filteredCategories[indexPath.row]
             self.searchDisplayController?.active = false
             self.searchDisplayController?.searchBar.text = selected
-            //self.searchDisplayController?.searchResultsTableView.hidden = true
-             yelpClient.search(selected)
+            yelpClient.search(selected)
             
         } else {
         
-        
+            // show details
+            println("selected : \(indexPath.row)")
+            
         }
     }
     
