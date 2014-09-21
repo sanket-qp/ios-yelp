@@ -13,7 +13,7 @@ class TempControllerViewController: UIViewController, UITableViewDelegate, UITab
     
     
     @IBOutlet weak var tableView: UITableView!
-    
+    @IBOutlet weak var filterButton: UIBarButtonItem!
     
     let consumerKey = "UqvuPXyQvL7ry65aw6CF2w"
     let consumerSecret = "3Vv_TwZd5x8FYdr_58AO_jXDHhM"
@@ -26,6 +26,9 @@ class TempControllerViewController: UIViewController, UITableViewDelegate, UITab
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        filterButton.enabled = true
+        self.navigationItem.backBarButtonItem = filterButton
+        
         tableView.delegate = self
         tableView.dataSource = self
         self.searchDisplayController?.displaysSearchBarInNavigationBar = true
