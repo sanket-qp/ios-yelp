@@ -28,10 +28,10 @@ class TempControllerViewController: UIViewController, UITableViewDelegate, UITab
         // Do any additional setup after loading the view.
         tableView.delegate = self
         tableView.dataSource = self
-        
+        self.searchDisplayController?.displaysSearchBarInNavigationBar = true
         yelpClient = YelpClient(consumerKey: consumerKey, consumerSecret: consumerSecret, accessToken: accessToken, accessSecret: accessSecret)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "refreshData:" , name: "searchFinished", object: nil)
-        yelpClient.search("food")
+        yelpClient.search("food", location: "Fremont", limit:20)
         
         
     }
@@ -66,7 +66,6 @@ class TempControllerViewController: UIViewController, UITableViewDelegate, UITab
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        println("\(indexPath.row)")
         var cell = tableView.dequeueReusableCellWithIdentifier("TempCell") as TempCellTableViewCell
         var searchResult = searchResults[indexPath.row]
         cell.populate(searchResult)

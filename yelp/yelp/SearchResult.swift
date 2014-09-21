@@ -36,8 +36,8 @@ class SearchResult {
         self.zipcode = location["postal_code"] as String
         self.categories = ["thai", "vegetarian", "salad"]
         self.categoryStr = combine(categories, separator: ", ")
-        var neighborhoods = location["neighborhoods"] as [String]
-        self.neighborhood = neighborhoods[0]
+        //var neighborhoods = location["neighborhoods"] as [String]
+        //self.neighborhood = neighborhoods[0]
         println(dict["rating_img_url_small"])
     }
     

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     let consumerKey = "UqvuPXyQvL7ry65aw6CF2w"
@@ -17,12 +17,22 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     let accessSecret = "j6-2z91Tq-PgkQrvGU1qZ0FCkKU"
     var yelpClient: YelpClient!
     var searchResults: [SearchResult] = []
+    @IBOutlet weak var searchBar: UISearchBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        
+        self.searchDisplayController?.displaysSearchBarInNavigationBar = true
+        /*
+        searchBar = UISearchBar(frame: CGRect(x: -5.0, y: 0.0, width: 320.0, height: 44.0))
+        searchBar.autoresizingMask = UIViewAutoresizing.FlexibleWidth
+        let searchView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 310.0, height: 44.0))
+        searchView.autoresizingMask = UIViewAutoresizing.None
+        searchBar.delegate = self
+        searchView.addSubview(searchBar)
+        self.navigationItem.titleView = searchView
+        */
         yelpClient = YelpClient(consumerKey: consumerKey, consumerSecret: consumerSecret, accessToken: accessToken, accessSecret: accessSecret)
         
          NSNotificationCenter.defaultCenter().addObserver(self, selector: "refreshData:" , name: "searchFinished", object: nil)

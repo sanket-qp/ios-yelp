@@ -48,7 +48,8 @@ class TempCellTableViewCell: UITableViewCell {
         starsImage.setImageWithURL(NSURL(string: searchResult.stars))
         priceRatingLabel.text = randomPriceRange()
         reviewsLabel.text = "\(searchResult.numOfReviews) Reviews"
-        addressLabel.text = "\(searchResult.address), \(searchResult.neighborhood)"
+        //addressLabel.text = "\(searchResult.address), \(searchResult.neighborhood)"
+        addressLabel.text = "\(searchResult.address)"
         categoriesLabel.text = searchResult.categoryStr
     }
     
