@@ -177,18 +177,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cKq-eC-83s">
+                                <rect key="frame" x="79" y="278" width="521" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="wHO-P0-nWX" id="MYO-8v-hO2"/>
+                                </connections>
+                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="116" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="48r-ng-ETi">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <color key="backgroundColor" white="0.94608234489999998" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <searchBar key="tableFooterView" contentMode="redraw" id="cKq-eC-83s">
-                                    <rect key="frame" x="0.0" y="202" width="600" height="44"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <textInputTraits key="textInputTraits"/>
-                                    <connections>
-                                        <outlet property="delegate" destination="wHO-P0-nWX" id="MYO-8v-hO2"/>
-                                    </connections>
-                                </searchBar>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TempCell" rowHeight="116" id="Wzw-LB-p3C" customClass="TempCellTableViewCell" customModule="yelp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
@@ -292,20 +291,21 @@
                         <constraints>
                             <constraint firstItem="48r-ng-ETi" firstAttribute="leading" secondItem="tAV-yu-TTm" secondAttribute="leadingMargin" constant="-16" id="744-T0-wzT"/>
                             <constraint firstAttribute="trailingMargin" secondItem="48r-ng-ETi" secondAttribute="trailing" constant="-16" id="DnK-4s-soe"/>
-                            <constraint firstItem="48r-ng-ETi" firstAttribute="top" secondItem="tAV-yu-TTm" secondAttribute="top" id="J6u-E9-FLv"/>
-                            <constraint firstItem="48r-ng-ETi" firstAttribute="top" secondItem="tAV-yu-TTm" secondAttribute="top" id="LY7-1A-BDy"/>
+                            <constraint firstItem="48r-ng-ETi" firstAttribute="top" secondItem="tAV-yu-TTm" secondAttribute="top" constant="64" id="J6u-E9-FLv"/>
+                            <constraint firstItem="48r-ng-ETi" firstAttribute="top" secondItem="tAV-yu-TTm" secondAttribute="top" constant="64" id="LY7-1A-BDy"/>
                             <constraint firstAttribute="bottom" secondItem="48r-ng-ETi" secondAttribute="bottom" id="Yfa-3F-gsV"/>
-                            <constraint firstItem="yIg-uD-L15" firstAttribute="top" secondItem="48r-ng-ETi" secondAttribute="bottom" constant="-44" id="hak-ta-4OE"/>
-                            <constraint firstItem="48r-ng-ETi" firstAttribute="top" secondItem="tAV-yu-TTm" secondAttribute="topMargin" id="pqe-hp-4fb"/>
+                            <constraint firstItem="48r-ng-ETi" firstAttribute="top" secondItem="tAV-yu-TTm" secondAttribute="topMargin" constant="64" id="pqe-hp-4fb"/>
                         </constraints>
                     </view>
-                    <toolbarItems>
-                        <barButtonItem title="Filter" id="obq-3s-Nna"/>
-                    </toolbarItems>
-                    <navigationItem key="navigationItem" title="Yelp New" id="Jzd-lV-hHO"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Yelp New" id="Jzd-lV-hHO">
+                        <barButtonItem key="leftBarButtonItem" title="Filter" id="Ze2-EU-r1B">
+                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="filterButton" destination="obq-3s-Nna" id="GyR-AX-oTT"/>
+                        <outlet property="searchBar" destination="cKq-eC-83s" id="jOl-MK-MW0"/>
                         <outlet property="searchDisplayController" destination="XLx-Ek-Z5M" id="Lxe-lk-tZe"/>
                         <outlet property="tableView" destination="48r-ng-ETi" id="bS7-A9-hFX"/>
                     </connections>
@@ -321,7 +321,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="2289" y="1803"/>
+            <point key="canvasLocation" x="2257" y="1835"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Pdg-J4-ADo">
