@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6246" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="jyt-pT-BUS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6246" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="d6l-E9-dNE">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6239"/>
@@ -101,9 +101,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1763" y="142"/>
+            <point key="canvasLocation" x="951" y="142"/>
         </scene>
-        <!--Yelp-->
+        <!--Yelp New-->
         <scene sceneID="hYr-ov-VKs">
             <objects>
                 <viewController id="wHO-P0-nWX" customClass="TempControllerViewController" customModule="yelp" customModuleProvider="target" sceneMemberID="viewController">
@@ -117,7 +117,8 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="116" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="48r-ng-ETi">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.94608234489999998" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexBackgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TempCell" rowHeight="116" id="Wzw-LB-p3C" customClass="TempCellTableViewCell" customModule="yelp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
@@ -147,7 +148,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="444 High St, Palo Alto" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9gf-3a-dEv">
                                                     <rect key="frame" x="101" y="65" width="200" height="21"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="200" id="St4-Zz-kWX"/>
+                                                        <constraint firstAttribute="width" constant="200" id="KlK-Ea-omF"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -166,7 +167,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0.5 mi" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kqN-ia-6ut">
-                                                    <rect key="frame" x="535" y="16" width="48" height="21"/>
+                                                    <rect key="frame" x="535" y="18" width="48" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                     <color key="textColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -186,9 +187,8 @@
                                                 <constraint firstItem="9gf-3a-dEv" firstAttribute="leading" secondItem="oPV-yq-Ndy" secondAttribute="trailing" constant="8" id="6hu-3G-78H"/>
                                                 <constraint firstItem="9gf-3a-dEv" firstAttribute="top" secondItem="SPQ-EC-UC4" secondAttribute="bottom" constant="3" id="AyX-Lr-CNV"/>
                                                 <constraint firstItem="oPV-yq-Ndy" firstAttribute="top" secondItem="7kU-Aq-gwh" secondAttribute="topMargin" constant="8" id="NEX-A1-SEc"/>
-                                                <constraint firstItem="9gf-3a-dEv" firstAttribute="top" secondItem="lDR-Hj-SC6" secondAttribute="top" constant="-15" id="NTv-AP-Ppx"/>
                                                 <constraint firstItem="lDR-Hj-SC6" firstAttribute="leading" secondItem="oPV-yq-Ndy" secondAttribute="trailing" constant="8" id="PHf-a4-ph2"/>
-                                                <constraint firstItem="875-jM-BQX" firstAttribute="top" secondItem="kqN-ia-6ut" secondAttribute="bottom" constant="17" id="T3B-tD-kNm"/>
+                                                <constraint firstItem="875-jM-BQX" firstAttribute="top" secondItem="kqN-ia-6ut" secondAttribute="bottom" constant="15" id="T3B-tD-kNm"/>
                                                 <constraint firstItem="SPQ-EC-UC4" firstAttribute="centerX" secondItem="uP3-SD-qbc" secondAttribute="centerX" constant="-87" id="VvO-8e-WqE"/>
                                                 <constraint firstItem="q4w-o2-Huj" firstAttribute="top" secondItem="7kU-Aq-gwh" secondAttribute="topMargin" constant="7" id="Wc5-P9-HHB"/>
                                                 <constraint firstItem="SPQ-EC-UC4" firstAttribute="leading" secondItem="oPV-yq-Ndy" secondAttribute="trailing" constant="8" id="Yef-H4-fLW"/>
@@ -198,11 +198,12 @@
                                                 <constraint firstItem="uP3-SD-qbc" firstAttribute="top" secondItem="q4w-o2-Huj" secondAttribute="bottom" constant="5" id="lj2-eB-sie"/>
                                                 <constraint firstItem="uP3-SD-qbc" firstAttribute="leading" secondItem="SPQ-EC-UC4" secondAttribute="trailing" constant="8" id="nf4-jB-sdR"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="oPV-yq-Ndy" secondAttribute="bottom" constant="6.5" id="rRw-nH-2wh"/>
-                                                <constraint firstItem="kqN-ia-6ut" firstAttribute="top" secondItem="7kU-Aq-gwh" secondAttribute="topMargin" constant="8" id="ryc-LE-UKc"/>
+                                                <constraint firstItem="kqN-ia-6ut" firstAttribute="top" secondItem="7kU-Aq-gwh" secondAttribute="topMargin" constant="10" id="ryc-LE-UKc"/>
                                                 <constraint firstItem="oPV-yq-Ndy" firstAttribute="leading" secondItem="7kU-Aq-gwh" secondAttribute="leadingMargin" id="xef-K0-tuC"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="kqN-ia-6ut" secondAttribute="trailing" constant="9" id="yJ5-Bo-9NM"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.94608234489051091" alpha="1" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <outlet property="addressLabel" destination="9gf-3a-dEv" id="oC8-my-BuQ"/>
                                             <outlet property="businessImage" destination="oPV-yq-Ndy" id="vO4-Jl-FeO"/>
@@ -225,14 +226,14 @@
                             <constraint firstItem="48r-ng-ETi" firstAttribute="top" secondItem="tAV-yu-TTm" secondAttribute="topMargin" id="pqe-hp-4fb"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Yelp" id="CWQ-Tg-IwF"/>
+                    <navigationItem key="navigationItem" title="Yelp New" id="Jzd-lV-hHO"/>
                     <connections>
                         <outlet property="tableView" destination="48r-ng-ETi" id="bS7-A9-hFX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Zx-3S-k2z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1763" y="722"/>
+            <point key="canvasLocation" x="2295" y="1742"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Pdg-J4-ADo">
@@ -253,23 +254,23 @@
             <point key="canvasLocation" x="138" y="797"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="QzD-hy-qEh">
+        <scene sceneID="Ygi-oA-EMg">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jyt-pT-BUS" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="d6l-E9-dNE" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="f1m-A4-7LA">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Khc-xJ-7UB">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.90980398654937744" green="0.45098042488098145" blue="0.364705890417099" alpha="0.5" colorSpace="deviceRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="wHO-P0-nWX" kind="relationship" relationship="rootViewController" id="suy-mS-jVo"/>
+                        <segue destination="wHO-P0-nWX" kind="relationship" relationship="rootViewController" id="LUK-UW-xFT"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="daO-9D-fz8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AVD-CE-iSy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="951" y="722"/>
+            <point key="canvasLocation" x="1483" y="1742"/>
         </scene>
     </scenes>
 </document>
