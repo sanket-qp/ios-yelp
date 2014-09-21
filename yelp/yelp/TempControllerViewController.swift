@@ -1,16 +1,20 @@
 //
-//  ListViewController.swift
+//  TempControllerViewController.swift
 //  yelp
 //
-//  Created by sanket patel on 9/19/14.
+//  Created by sanket patel on 9/20/14.
 //  Copyright (c) 2014 sanket patel. All rights reserved.
 //
 
 import UIKit
 
-class ListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class TempControllerViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    
+    
     @IBOutlet weak var tableView: UITableView!
+    
+    
     let consumerKey = "UqvuPXyQvL7ry65aw6CF2w"
     let consumerSecret = "3Vv_TwZd5x8FYdr_58AO_jXDHhM"
     let accessToken = "JGCPhfIy6DupUtQRvF3gY5z3ZkNFnGl6"
@@ -20,15 +24,21 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
         tableView.delegate = self
         tableView.dataSource = self
         
         yelpClient = YelpClient(consumerKey: consumerKey, consumerSecret: consumerSecret, accessToken: accessToken, accessSecret: accessSecret)
-        
-         NSNotificationCenter.defaultCenter().addObserver(self, selector: "refreshData:" , name: "searchFinished", object: nil)
-        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "refreshData:" , name: "searchFinished", object: nil)
         yelpClient.search("food")
-        //tableView.rowHeight = UITableViewAutomaticDimension
+        
+        
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
     
     func refreshData(sender: AnyObject) {
@@ -37,26 +47,6 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         searchResults = yelpClient.searchResults!
         println("search results : \(searchResults.count)")
         tableView.reloadData()
-    }
-    
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
-        return searchResults.count
-    }
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
-        var cell = tableView.dequeueReusableCellWithIdentifier("SearchResultCell") as SearchResultCell
-        var searchResult = searchResults[indexPath.row]
-        cell.populate(searchResult)
-        return cell
     }
 
     /*
@@ -68,5 +58,19 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return searchResults.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        println("\(indexPath.row)")
+        var cell = tableView.dequeueReusableCellWithIdentifier("TempCell") as TempCellTableViewCell
+        var searchResult = searchResults[indexPath.row]
+        cell.populate(searchResult)
+        return cell
+    }
 
 }

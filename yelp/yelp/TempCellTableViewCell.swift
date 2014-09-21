@@ -1,26 +1,31 @@
 //
-//  SearchResultCell.swift
+//  TempCellTableViewCell.swift
 //  yelp
 //
-//  Created by sanket patel on 9/19/14.
+//  Created by sanket patel on 9/20/14.
 //  Copyright (c) 2014 sanket patel. All rights reserved.
 //
 
 import UIKit
 
-class SearchResultCell: UITableViewCell {
+class TempCellTableViewCell: UITableViewCell {
 
-    
     @IBOutlet weak var businessImage: UIImageView!
+    
     @IBOutlet weak var nameLabel: UILabel!
+    
+    
     @IBOutlet weak var starsImage: UIImageView!
-    @IBOutlet weak var distanceLabel: UILabel!
-    @IBOutlet weak var priceRangeLabel: UILabel!
-    @IBOutlet weak var numOfReviewsLabel: UILabel!
+    
+    @IBOutlet weak var reviewsLabel: UILabel!
+    
     @IBOutlet weak var addressLabel: UILabel!
+    
+    @IBOutlet weak var distanceLable: UILabel!
+    
     @IBOutlet weak var categoriesLabel: UILabel!
-   
-    var searchResult: SearchResult!
+    
+    @IBOutlet weak var priceRatingLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -33,22 +38,22 @@ class SearchResultCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
-    
+        
     func populate(searchResult: SearchResult) {
-    
+        
         businessImage.setImageWithURL(NSURL(string: searchResult.imageUrl))
         businessImage.clipsToBounds = true
         nameLabel.text = searchResult.name
-        distanceLabel.text = "\(randomDistance()) mi"
+        distanceLable.text = "\(randomDistance()) mi"
         starsImage.setImageWithURL(NSURL(string: searchResult.stars))
-        priceRangeLabel.text = randomPriceRange()
-        numOfReviewsLabel.text = "\(searchResult.numOfReviews) Reviews"
+        priceRatingLabel.text = randomPriceRange()
+        reviewsLabel.text = "\(searchResult.numOfReviews) Reviews"
         addressLabel.text = "\(searchResult.address), \(searchResult.neighborhood)"
         categoriesLabel.text = searchResult.categoryStr
     }
     
     func randomPriceRange() -> String {
-    
+        
         var priceRanges = ["$", "$$", "$$$", "$$$$"]
         var randomNumber : Int = Int(rand()) % (priceRanges.count - 1)
         return priceRanges[randomNumber]
@@ -60,4 +65,5 @@ class SearchResultCell: UITableViewCell {
         var randomNumber : Int = Int(rand()) % (distances.count - 1)
         return distances[randomNumber]
     }
+    
 }

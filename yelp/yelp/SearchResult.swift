@@ -38,6 +38,7 @@ class SearchResult {
         self.categoryStr = combine(categories, separator: ", ")
         var neighborhoods = location["neighborhoods"] as [String]
         self.neighborhood = neighborhoods[0]
+        println(dict["rating_img_url_small"])
     }
     
     func combine(list: [String], separator: String) -> String{
